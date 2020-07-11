@@ -39,5 +39,17 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, clickedStudent.name, Toast.LENGTH_SHORT).show()
 
         }
+
+        studentListView.setOnItemClickListener{parent, view, position, id ->
+
+            //오래 눌린 사람을 목록에서 삭제.
+            mStudentList.removeAt(position)
+
+            //어댑터가 새로고침 하도록
+            mAdapter.notifyDataSetChanged()
+
+            //Boolean값을 리턴해줘야한다.
+            return@setOnItemLongClickListener true
+        }
     }
 }
