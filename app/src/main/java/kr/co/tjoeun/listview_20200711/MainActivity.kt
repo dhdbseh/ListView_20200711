@@ -27,6 +27,8 @@ class MainActivity : AppCompatActivity() {
         mStudentList.add(Student("최현일", "경기도 남양주시", 1990))
         mStudentList.add(Student("황선혜", "서울시 금천구", 1996))
 
+        mAdapter.notifyDataSetChanged()
+
         mAdapter = StudentAdapter(this, R.layout.student_list_item, mStudentList)
         studentListView.adapter = mAdapter
 
